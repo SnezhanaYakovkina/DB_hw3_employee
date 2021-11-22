@@ -1,0 +1,11 @@
+create table if not exists employee(
+department_id serial primary key,
+department_name varchar(100) not null,
+employee_name varchar(100) not null
+);
+
+create table if not exists department_head(
+head_id serial primary key,
+head_name varchar(100) not null,
+department_id integer references employee(department_id)
+);
